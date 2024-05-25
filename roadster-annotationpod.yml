@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: roadsterpod
+  labels:
+    appName: roadster
+    version: "2"
+    env: stage
+  annotations:
+    imageregistry: "https://hub.docker.com/"
+    licence: GPL licence
+    warranty: 5 Years
+spec:
+  containers:
+    - name: roadster
+      image: raghravi94/roadster:1.0
+      ports:
+        - name: tomcatport
+          containerPort: 8080
+          protocol: TCP
